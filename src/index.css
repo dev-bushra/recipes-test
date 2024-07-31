@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  background-color: #343a40;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%239C92AC' fill-opacity='0.25' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(to right top, #343a40, #2b2c31, #211f22, #151314, #000000);
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+}
+
+.app-container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  margin: 0;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+.recipes-containers {
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+.recipe-list {
+  width: 30%;
+  min-height: 60vh;
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.recipe-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  cursor: pointer;
+  padding: 10px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.recipe-item.selected {
+  background: #50a8ff;
+}
+
+.recipe-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+.recipe-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.recipe-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+.selected .recipe-name {
+  font-size: 14px;
+}
+
+.recipe-description {
+  margin: 0;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.recipe-details {
+  width: 70%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  min-height: fit-content;
+  max-height: fit-content;
+}
+
+.recipe-details .tag {
+  background-color: #50a8ff !important;
+  margin-top: 16px;
+  background: white;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-right: 6px;
+  font-size: 13px;
+  color: white;
+}
+
+.recipe-title {
+  margin: 10px auto;
+}
+
+.detail-image {
+  height: 200px;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px;
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 14px;
+}
+
+.section-bottom p {
+  font-size: 12px;
+}
+
+.list {
+  font-size: 14px;
+  color: #909090;
+  margin-top: 15px;
+  max-width: 65%;
+}
+
+.ol {
+  margin: 5px 0px;
+}
+
+.save-button {
+  margin-top: 20px;
+}
+
+.filter-component {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 0.5rem;
+}
+
+.sort-options {
+  display: flex;
+  gap: 10px;
+}
+
+.sort-options button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  min-width: 10rem;
+  max-width: 10rem;
+}
+
+.sort-options button.active {
+  background-color: #50a8ff;
+  color: white;
+}
+
+.search-bar {
+  padding: 15px;
+  border: 1px solid #50a8ff;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.recipe-info .tags {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+  margin-top: 0.3rem;
+}
+
+.rating span {
+  color: #ffe234;
+  margin: 0.2rem;
+}
+
+.recipe-details .react-loading-skeleton {
+  margin-bottom: 12px;
+}
+
+.alert {
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
+
+.alert-info {
+  color: #2020a0;
+  background-color: #e0e0ff;
+}
+
+/* Mobile */
+@media screen and (max-width: 750px) {
+  .recipe-header {
+    display: block;
+  }
+  .app-container {
+    padding: 2px 18px 1px 8px;
+  }
+  .recipe-info {
+    display: none;
+  }
+  .recipe-info .tags {
+    display: none;
+  }
+  .recipe-list {
+    width: 92px;
+  }
+  .detail-image {
+    width: 100%;
+    height: 191px;
+  }
+  .section {
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+  }
+}
